@@ -19,8 +19,11 @@ nav:
     - Chat Completions: api/chat-completions.md
     - Vision API: api/vision-api.md
     - Batch Processing: api/batch-processing.md
+    - AWS Bedrock: api/bedrock.md
+    - Client Factory: api/factory.md
   - Examples:
-    - Basic Usage: examples/basic-usage.md
+    - OpenAI Examples: examples/openai_examples.md
+    - Bedrock Examples: examples/bedrock_examples.md
     - Advanced Features: examples/advanced-features.md
 
 markdown_extensions:
@@ -31,4 +34,16 @@ markdown_extensions:
   - admonition
   - footnotes
   - toc:
-      permalink: true 
+      permalink: true
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          selection:
+            docstring_style: google
+          rendering:
+            show_source: true
+            show_root_heading: true 

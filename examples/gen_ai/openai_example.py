@@ -2,7 +2,6 @@
 Example script demonstrating how to use the OpenAIClient
 """
 
-import json
 import os
 import sys
 from typing import List, Optional

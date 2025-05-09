@@ -256,7 +256,7 @@ def process_with_recovery(client, prompt):
             raise
 ```
 
-## Next Steps
+## Related Documentation
 
-- Review [Basic Usage](basic-usage.md) for fundamental examples
 - Explore [API Documentation](../api/overview.md) for detailed API information
+- Review [OpenAI Examples](openai_examples.md) for fundamental examples

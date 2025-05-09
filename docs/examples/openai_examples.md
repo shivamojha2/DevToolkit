@@ -1,6 +1,6 @@
-# Basic Usage Examples
+# OpenAI Examples
 
-This guide provides basic examples of how to use DevToolkit for common tasks.
+This guide provides examples of how to use DevToolkit with OpenAI-compatible APIs.
 
 ## Setup
 

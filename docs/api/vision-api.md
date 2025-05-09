@@ -114,4 +114,4 @@ response = client.run_vision_request(
 
 - Learn about [Text Completions](text-completions.md)
 - Explore [Chat Completions](chat-completions.md)
-- Check out the [Examples](../examples/basic-usage.md)
+- Check out the [OpenAI Examples](../examples/openai_examples.md)

@@ -99,5 +99,5 @@ else:
 ## Next Steps
 
 - Learn about [Chat Completions](chat-completions.md)
-- Explore [Batch Processing](batch-processing.md)
-- Check out the [Examples](../examples/basic-usage.md)
+- Explore [Vision API](vision-api.md)
+- Check out the [OpenAI Examples](../examples/openai_examples.md)

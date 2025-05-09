@@ -140,4 +140,4 @@ response = client.run_chat_completions(
 
 - Learn about [Text Completions](text-completions.md)
 - Explore [Vision API](vision-api.md)
-- Check out the [Examples](../examples/basic-usage.md)
+- Check out the [OpenAI Examples](../examples/openai_examples.md)
