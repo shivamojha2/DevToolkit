@@ -30,4 +30,4 @@ response = run_completions(
 
 ## Documentation
 
-See the [docs](./docs) directory for detailed documentation on each module.
+The full documentation is available at: [https://shivamojha2.github.io/DevToolkit/](https://shivamojha2.github.io/DevToolkit/)
