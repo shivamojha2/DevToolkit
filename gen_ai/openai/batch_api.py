@@ -16,8 +16,7 @@ def run_completions_batch(
     endpoint: str,
     model_name: str,
     api_key: str,
-    timeout: int = 60,
-    generation_params: Dict[str, Any] = None,
+    timeout: int = 60,  # Increased default timeout for batch processing
     return_error: bool = False,
     concurrent: bool = True,
     max_concurrent: int = 5,
@@ -34,12 +33,10 @@ def run_completions_batch(
         model_name: Name of the model to use
         api_key: API key for authentication
         timeout: Request timeout in seconds
-        generation_params: Optional dictionary with model generation parameters
-                          (temperature, max_tokens, top_p, etc.)
         return_error: If True, returns both the results and error details
         concurrent: If True, process requests concurrently using ThreadPoolExecutor
         max_concurrent: Maximum number of concurrent requests (only used if concurrent=True)
-        **kwargs: Additional parameters to include in the request
+        **kwargs: Additional parameters to include in the request (temperature, max_tokens, top_p, etc.)
 
     Returns:
         If return_error is False: List of generated text responses (None for failed requests)
@@ -75,7 +72,6 @@ def run_completions_batch(
             model_name=model_name,
             api_key=api_key,
             timeout=timeout,
-            generation_params=generation_params,
             return_error=True,
             **kwargs,
         )

@@ -175,3 +175,5 @@ cython_debug/
 
 *.ipynb
 test_notebooks/*
+.pylintrc
+examples/gen_ai/assets/*

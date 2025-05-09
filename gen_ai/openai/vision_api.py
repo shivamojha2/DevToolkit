@@ -5,57 +5,43 @@ Vision Language model API related functions
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from gen_ai.openai.invoke_model import run_chat_completions
+from gen_ai.openai.stream_model import run_chat_completions_stream
 from gen_ai.utils import validate_image_paths
 
 
 def run_vision_request(
-    prompt: str,
+    prompt: Union[str, List[Dict[str, Any]]],
     image_paths: List[str],
     endpoint: str,
     model_name: str,
     api_key: str,
-    api_type: str = "chat",
     timeout: int = 30,
-    generation_params: Dict[str, Any] = None,
+    guided_json: Dict[str, Any] = None,
+    stream: bool = False,
     return_error: bool = False,
-    **kwargs,
+    **kwargs
 ) -> Union[Optional[str], Tuple[Optional[str], Optional[Dict[str, Any]]]]:
     """
     Convenience function to send a vision request to the LLM API.
 
     Args:
-        prompt: Text prompt to send with the images
+        prompt: Text prompt or message to send with the images
         image_paths: List of paths to images to include in the request
         endpoint: Base API endpoint URL
         model_name: Name of the model to use
         api_key: API key for authentication
-        api_type: API type to use, either "chat" or "completions"
         timeout: Request timeout in seconds
-        generation_params: Optional dictionary with model generation parameters
-                          (temperature, max_tokens, top_p, etc.)
+        stream: If True, uses streaming mode for the request
         return_error: If True, returns both the result and error details
-        **kwargs: Additional parameters to include in the request
+        **kwargs: Additional parameters to include in the request (temperature, max_tokens, top_p, etc.)
 
     Returns:
         If return_error is False: The generated text response or None if the request failed
-        If return_error is True: A tuple (result, error_details)
+        If return_error is True: A tuple of (result, error_details) where error_details is None if successful
 
     Raises:
         FileNotFoundError: If any of the provided image paths don't exist (unless return_error=True)
-        ValueError: If api_type is not "chat" or "completions"
     """
-    # Validate API type
-    if api_type not in ["chat"]:
-        error_msg = f"Invalid api_type: {api_type}. Must be 'chat'."
-        if return_error:
-            return None, {
-                "error_type": "Invalid parameter",
-                "message": error_msg,
-                "suggestion": "Use 'chat' for api_type",
-            }
-        else:
-            raise ValueError(error_msg)
-
     # Try to validate image paths early to avoid unnecessary processing
     try:
         image_paths = validate_image_paths(image_paths)
@@ -69,16 +55,30 @@ def run_vision_request(
         else:
             raise
 
-    if api_type == "chat":
-        messages = [{"role": "user", "content": prompt}]
+    messages = (
+        [{"role": "user", "content": prompt}] if isinstance(prompt, str) else prompt
+    )
+
+    # If streaming is enabled, use the streaming function
+    if stream:
+        return run_chat_completions_stream(
+            messages=messages,
+            endpoint=endpoint,
+            model_name=model_name,
+            api_key=api_key,
+            timeout=timeout,
+            image_paths=image_paths,
+            **kwargs
+        )
+    else:
         return run_chat_completions(
             messages=messages,
             endpoint=endpoint,
             model_name=model_name,
             api_key=api_key,
             timeout=timeout,
-            generation_params=generation_params,
+            guided_json=guided_json,
             return_error=return_error,
             image_paths=image_paths,
-            **kwargs,
+            **kwargs
         )

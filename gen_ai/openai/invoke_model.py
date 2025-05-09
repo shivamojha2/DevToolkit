@@ -23,7 +23,7 @@ def run_completions(
     model_name: str,
     api_key: str,
     timeout: int = 30,
-    generation_params: Dict[str, Any] = None,
+    guided_json: Dict[str, Any] = None,
     return_error: bool = False,
     **kwargs,
 ) -> Union[Optional[str], Tuple[Optional[str], Optional[Dict[str, Any]]]]:
@@ -36,10 +36,9 @@ def run_completions(
         model_name: Name of the model to use
         api_key: API key for authentication
         timeout: Request timeout in seconds
-        generation_params: Optional dictionary with model generation parameters
-                          (temperature, max_tokens, top_p, etc.)
+        guided_json: Optional JSON schema to enforce structured output format
         return_error: If True, returns both the result and error details
-        **kwargs: Additional parameters to include in the request
+        **kwargs: Additional parameters to include in the request (temperature, max_tokens, top_p, etc.)
 
     Returns:
         If return_error is False: The generated text response or None if the request failed
@@ -65,9 +64,9 @@ def run_completions(
             "n": 1,
         }
 
-        # Override with user-provided generation_params if specified
-        if generation_params:
-            payload.update(generation_params)
+        # Add guided_json if specified
+        if guided_json:
+            payload["extra_body"] = {"guided_json": guided_json}
 
         # Add any additional parameters
         payload.update(kwargs)
@@ -128,7 +127,7 @@ def run_chat_completions(
     model_name: str,
     api_key: str,
     timeout: int = 30,
-    generation_params: Dict[str, Any] = None,
+    guided_json: Dict[str, Any] = None,
     return_error: bool = False,
     image_paths: List[str] = None,
     **kwargs,
@@ -144,11 +143,10 @@ def run_chat_completions(
         model_name: Name of the model to use
         api_key: API key for authentication
         timeout: Request timeout in seconds
-        generation_params: Optional dictionary with model generation parameters
-                          (temperature, max_tokens, top_p, etc.)
+        guided_json: Optional JSON schema to enforce structured output format
         return_error: If True, returns both the result and error details
         image_paths: Optional list of paths to images to attach to the last user message
-        **kwargs: Additional parameters to include in the request
+        **kwargs: Additional parameters to include in the request (temperature, max_tokens, top_p, etc.)
 
     Returns:
         If return_error is False: The generated text response or None if the request failed
@@ -219,17 +217,19 @@ def run_chat_completions(
             "n": 1,
         }
 
-        # Override with user-provided generation_params if specified
-        if generation_params:
-            payload.update(generation_params)
+        # Add guided_json if specified
+        if guided_json:
+            payload["extra_body"] = {"guided_json": guided_json}
 
         # Add any additional parameters
         payload.update(kwargs)
 
         logger.info(f"Sending chat completion request to {chat_endpoint}")
+
         response = requests.post(
             chat_endpoint, headers=headers, json=payload, timeout=timeout
         )
+
         response.raise_for_status()
 
         result = response.json()["choices"][0]["message"]["content"]

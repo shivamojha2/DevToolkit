@@ -5,6 +5,8 @@ OpenAI client implementation
 from gen_ai.api_interface import LLMProvider
 from gen_ai.openai.batch_api import run_completions_batch
 from gen_ai.openai.invoke_model import run_chat_completions, run_completions
+from gen_ai.openai.stream_model import (run_chat_completions_stream,
+                                        run_completions_stream)
 from gen_ai.openai.vision_api import run_vision_request
 
 
@@ -31,6 +33,16 @@ class OpenAIClient(LLMProvider):
     def run_completions_batch(self, prompts, **kwargs):
         return run_completions_batch(
             prompts, self.endpoint, self.model_name, self.api_key, **kwargs
+        )
+
+    def run_completions_stream(self, prompt, **kwargs):
+        return run_completions_stream(
+            prompt, self.endpoint, self.model_name, self.api_key, **kwargs
+        )
+
+    def run_chat_completions_stream(self, messages, **kwargs):
+        return run_chat_completions_stream(
+            messages, self.endpoint, self.model_name, self.api_key, **kwargs
         )
 
     def run_vision_request(self, prompt, image_paths, **kwargs):
