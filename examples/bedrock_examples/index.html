@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://shivamojha2.github.io/DevToolkit/api/overview/">
+        <link rel="canonical" href="https://shivamojha2.github.io/DevToolkit/examples/bedrock_examples/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../openai_examples/">
       
       
-        <link rel="next" href="../text-completions/">
+        <link rel="next" href="../advanced-features/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Overview - DevToolkit Documentation</title>
+        <title>Bedrock Examples - DevToolkit Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-overview" class="md-skip">
+        <a href="#aws-bedrock-examples" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Bedrock Examples
             
           </span>
         </div>
@@ -199,13 +199,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../api/overview/" class="md-tabs__link">
           
   
   
@@ -221,11 +219,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../examples/openai_examples/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../openai_examples/" class="md-tabs__link">
           
   
   
@@ -296,31 +296,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -333,7 +330,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             API Reference
@@ -344,32 +341,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../api/overview/" class="md-nav__link">
         
   
   
@@ -380,77 +355,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#supported-providers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Supported Providers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#provider-specific-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Provider-Specific Features
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Provider-Specific Features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#openai" class="md-nav__link">
-    <span class="md-ellipsis">
-      OpenAI
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#aws-bedrock" class="md-nav__link">
-    <span class="md-ellipsis">
-      AWS Bedrock
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -463,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../text-completions/" class="md-nav__link">
+      <a href="../../api/text-completions/" class="md-nav__link">
         
   
   
@@ -486,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chat-completions/" class="md-nav__link">
+      <a href="../../api/chat-completions/" class="md-nav__link">
         
   
   
@@ -509,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vision-api/" class="md-nav__link">
+      <a href="../../api/vision-api/" class="md-nav__link">
         
   
   
@@ -532,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../batch-processing/" class="md-nav__link">
+      <a href="../../api/batch-processing/" class="md-nav__link">
         
   
   
@@ -555,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bedrock/" class="md-nav__link">
+      <a href="../../api/bedrock/" class="md-nav__link">
         
   
   
@@ -578,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../factory/" class="md-nav__link">
+      <a href="../../api/factory/" class="md-nav__link">
         
   
   
@@ -605,28 +509,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -639,7 +546,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Examples
@@ -653,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/openai_examples/" class="md-nav__link">
+      <a href="../openai_examples/" class="md-nav__link">
         
   
   
@@ -673,10 +580,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../examples/bedrock_examples/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Bedrock Examples
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -687,6 +616,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Chat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vision-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vision API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Streaming
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -699,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/advanced-features/" class="md-nav__link">
+      <a href="../advanced-features/" class="md-nav__link">
         
   
   
@@ -749,53 +725,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-providers" class="md-nav__link">
+  <a href="#basic-chat" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported Providers
+      Basic Chat
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-features" class="md-nav__link">
+  <a href="#vision-api" class="md-nav__link">
     <span class="md-ellipsis">
-      Common Features
+      Vision API
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#provider-specific-features" class="md-nav__link">
+  <a href="#streaming" class="md-nav__link">
     <span class="md-ellipsis">
-      Provider-Specific Features
+      Streaming
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Provider-Specific Features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#openai" class="md-nav__link">
-    <span class="md-ellipsis">
-      OpenAI
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#aws-bedrock" class="md-nav__link">
-    <span class="md-ellipsis">
-      AWS Bedrock
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -815,36 +767,38 @@
 
 
 
-<h1 id="api-overview">API Overview<a class="headerlink" href="#api-overview" title="Permanent link">&para;</a></h1>
-<h2 id="supported-providers">Supported Providers<a class="headerlink" href="#supported-providers" title="Permanent link">&para;</a></h2>
-<ul>
-<li>OpenAI: Access to GPT models and other OpenAI services</li>
-<li>AWS Bedrock: Access to various foundation models including Claude, Llama, and others</li>
-</ul>
-<h2 id="common-features">Common Features<a class="headerlink" href="#common-features" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Text completions</li>
-<li>Chat completions</li>
-<li>Streaming responses</li>
-<li>Vision API support</li>
-<li>Batch processing</li>
-<li>Error handling</li>
-</ul>
-<h2 id="provider-specific-features">Provider-Specific Features<a class="headerlink" href="#provider-specific-features" title="Permanent link">&para;</a></h2>
-<h3 id="openai">OpenAI<a class="headerlink" href="#openai" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Custom endpoints support</li>
-<li>Guided JSON output</li>
-<li>Batch processing</li>
-<li>Vision API with base64 image encoding</li>
-</ul>
-<h3 id="aws-bedrock">AWS Bedrock<a class="headerlink" href="#aws-bedrock" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Multiple model support (Claude, Llama, etc.)</li>
-<li>Raw image bytes support</li>
-<li>AWS credential management</li>
-<li>Region-specific endpoints</li>
-</ul>
+<h1 id="aws-bedrock-examples">AWS Bedrock Examples<a class="headerlink" href="#aws-bedrock-examples" title="Permanent link">&para;</a></h1>
+<h2 id="basic-chat">Basic Chat<a class="headerlink" href="#basic-chat" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">gen_ai.factory</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_client</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">create_client</span><span class="p">(</span>
+    <span class="n">provider</span><span class="o">=</span><span class="s2">&quot;bedrock&quot;</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;your_aws_access_key&quot;</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;anthropic.claude-3-sonnet-20240229-v1:0&quot;</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;us-east-1&quot;</span><span class="p">,</span>
+    <span class="n">secret_key</span><span class="o">=</span><span class="s2">&quot;your_aws_secret_key&quot;</span>
+<span class="p">)</span>
+
+<span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello, how are you?&quot;</span><span class="p">}]</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">run_chat_completions</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="vision-api">Vision API<a class="headerlink" href="#vision-api" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;What&#39;s in this image?&quot;</span><span class="p">}]</span>
+<span class="n">image_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;path/to/image.jpg&quot;</span><span class="p">]</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">run_chat_completions</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="n">image_paths</span><span class="o">=</span><span class="n">image_paths</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="streaming">Streaming<a class="headerlink" href="#streaming" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Tell me a story&quot;</span><span class="p">}]</span>
+<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">run_chat_completions_streaming</span><span class="p">(</span><span class="n">messages</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p>```</p>
+<p>Would you like me to:
+1. Create any of these documentation files?
+2. Add more specific examples?
+3. Add more detailed API documentation for specific components?</p>
 
 
 
