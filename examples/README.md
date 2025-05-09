@@ -39,3 +39,10 @@ python examples/openai_example.py
 ```
 
 ### Amazon Bedrock Example
+
+The shared example shows how to use Converse API to make calls to the text and vision capabilities of Bedrock models.
+
+```bash
+# From the project root directory
+python examples/bedrock_example.py
+```

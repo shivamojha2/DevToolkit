@@ -9,6 +9,7 @@ from typing import List, Optional
 
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
+from utils import print_response
 
 project_root = os.path.dirname(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,22 +42,6 @@ class ImageAnalysis(BaseModel):
     description: str = Field(..., description="Detailed description of the image")
     objects: List[str] = Field(..., description="List of objects in the image")
     colors: List[str] = Field(..., description="List of colors in the image")
-
-
-def print_response(response):
-    """Print the response from the API in a formatted way"""
-    if isinstance(response, dict):
-        if "choices" in response:
-            for choice in response["choices"]:
-                if "text" in choice:
-                    print(f"Response: {choice['text'].strip()}")
-                elif "message" in choice:
-                    print(f"Role: {choice['message']['role']}")
-                    print(f"Content: {choice['message']['content'].strip()}")
-        else:
-            print(json.dumps(response, indent=2))
-    else:
-        print(response)
 
 
 def test_completions_api(client):
