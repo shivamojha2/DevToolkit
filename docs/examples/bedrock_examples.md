@@ -35,9 +35,6 @@ for chunk in client.run_chat_completions_streaming(messages):
     print(chunk, end="", flush=True)
 ```
 
-```
+## Related Documentation
 
-Would you like me to:
-1. Create any of these documentation files?
-2. Add more specific examples?
-3. Add more detailed API documentation for specific components?
+- Review [OpenAI Examples](openai_examples.md) for fundamental examples

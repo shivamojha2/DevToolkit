@@ -178,3 +178,5 @@ test_notebooks/*
 .pylintrc
 examples/gen_ai/assets/*
 to-dos.md
+.vscode/*
+.DS_Store
