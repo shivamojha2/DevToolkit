@@ -2,46 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://shivamojha2.github.io/DevToolkit/</loc>
-         <lastmod>2025-05-09</lastmod>
+         <lastmod>2025-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://shivamojha2.github.io/DevToolkit/api/azure_openai/</loc>
+         <lastmod>2025-05-15</lastmod>
     </url>
     <url>
          <loc>https://shivamojha2.github.io/DevToolkit/api/batch-processing/</loc>
-         <lastmod>2025-05-09</lastmod>
+         <lastmod>2025-05-15</lastmod>
     </url>
     <url>
          <loc>https://shivamojha2.github.io/DevToolkit/api/bedrock/</loc>
-         <lastmod>2025-05-09</lastmod>
+         <lastmod>2025-05-15</lastmod>
     </url>
     <url>
          <loc>https://shivamojha2.github.io/DevToolkit/api/chat-completions/</loc>
-         <lastmod>2025-05-09</lastmod>
+         <lastmod>2025-05-15</lastmod>
     </url>
     <url>
          <loc>https://shivamojha2.github.io/DevToolkit/api/factory/</loc>
-         <lastmod>2025-05-09</lastmod>
+         <lastmod>2025-05-15</lastmod>
     </url>
     <url>
          <loc>https://shivamojha2.github.io/DevToolkit/api/overview/</loc>
-         <lastmod>2025-05-09</lastmod>
+         <lastmod>2025-05-15</lastmod>
     </url>
     <url>
          <loc>https://shivamojha2.github.io/DevToolkit/api/text-completions/</loc>
-         <lastmod>2025-05-09</lastmod>
+         <lastmod>2025-05-15</lastmod>
     </url>
     <url>
          <loc>https://shivamojha2.github.io/DevToolkit/api/vision-api/</loc>
-         <lastmod>2025-05-09</lastmod>
+         <lastmod>2025-05-15</lastmod>
     </url>
     <url>
          <loc>https://shivamojha2.github.io/DevToolkit/examples/advanced-features/</loc>
-         <lastmod>2025-05-09</lastmod>
+         <lastmod>2025-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://shivamojha2.github.io/DevToolkit/examples/azure_openai/</loc>
+         <lastmod>2025-05-15</lastmod>
     </url>
     <url>
          <loc>https://shivamojha2.github.io/DevToolkit/examples/bedrock_examples/</loc>
-         <lastmod>2025-05-09</lastmod>
+         <lastmod>2025-05-15</lastmod>
     </url>
     <url>
          <loc>https://shivamojha2.github.io/DevToolkit/examples/openai_examples/</loc>
-         <lastmod>2025-05-09</lastmod>
+         <lastmod>2025-05-15</lastmod>
     </url>
 </urlset>

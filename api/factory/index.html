@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://shivamojha2.github.io/DevToolkit/api/factory/">
       
       
-        <link rel="prev" href="../bedrock/">
+        <link rel="prev" href="../azure_openai/">
       
       
         <link rel="next" href="../../examples/openai_examples/">
@@ -482,6 +482,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure_openai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure OpenAI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -684,6 +707,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../examples/azure_openai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure OpenAI Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../examples/advanced-features/" class="md-nav__link">
         
   
@@ -807,11 +853,22 @@
     <span class="n">region</span><span class="o">=</span><span class="s2">&quot;us-east-1&quot;</span><span class="p">,</span>
     <span class="n">secret_key</span><span class="o">=</span><span class="s2">&quot;your_aws_secret_key&quot;</span>
 <span class="p">)</span>
+
+<span class="c1"># Create Azure OpenAI client</span>
+<span class="n">azure_client</span> <span class="o">=</span> <span class="n">create_client</span><span class="p">(</span>
+    <span class="n">provider</span><span class="o">=</span><span class="s2">&quot;azure&quot;</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">,</span>
+    <span class="n">endpoint</span><span class="o">=</span><span class="n">endpoint</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="n">model_name</span><span class="p">,</span>
+    <span class="n">deployment</span><span class="o">=</span><span class="n">deployment</span><span class="p">,</span>
+    <span class="n">api_version</span><span class="o">=</span><span class="n">api_version</span><span class="p">,</span>
+<span class="p">)</span>
 </code></pre></div>
 <h2 id="supported-providers">Supported Providers<a class="headerlink" href="#supported-providers" title="Permanent link">&para;</a></h2>
 <ul>
 <li>OpenAI</li>
 <li>AWS Bedrock</li>
+<li>Azure OpenAI</li>
 </ul>
 <h2 id="common-parameters">Common Parameters<a class="headerlink" href="#common-parameters" title="Permanent link">&para;</a></h2>
 <ul>
