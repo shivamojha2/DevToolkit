@@ -31,3 +31,9 @@ response = run_completions(
 ## Documentation
 
 The full documentation is available at: [https://shivamojha2.github.io/DevToolkit/](https://shivamojha2.github.io/DevToolkit/)
+
+## Roadmap
+
+- Add async completion functionality (highly recommended and a best practice to use asynchronous operations in a service environment to ensure scalability, responsiveness, and efficient resource utilization)
+- Add function calling
+- Add vector databases

@@ -25,12 +25,23 @@ bedrock_client = create_client(
     region="us-east-1",
     secret_key="your_aws_secret_key"
 )
+
+# Create Azure OpenAI client
+azure_client = create_client(
+    provider="azure",
+    api_key=api_key,
+    endpoint=endpoint,
+    model_name=model_name,
+    deployment=deployment,
+    api_version=api_version,
+)
 ```
 
 ## Supported Providers
 
 - OpenAI
 - AWS Bedrock
+- Azure OpenAI
 
 ## Common Parameters
 

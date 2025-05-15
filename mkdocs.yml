@@ -20,10 +20,12 @@ nav:
     - Vision API: api/vision-api.md
     - Batch Processing: api/batch-processing.md
     - AWS Bedrock: api/bedrock.md
+    - Azure OpenAI: api/azure_openai.md
     - Client Factory: api/factory.md
   - Examples:
     - OpenAI Examples: examples/openai_examples.md
     - Bedrock Examples: examples/bedrock_examples.md
+    - Azure OpenAI Examples: examples/azure_openai.md
     - Advanced Features: examples/advanced-features.md
 
 markdown_extensions:

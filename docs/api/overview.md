@@ -4,6 +4,7 @@
 
 - OpenAI: Access to GPT models and other OpenAI services
 - AWS Bedrock: Access to various foundation models including Claude, Llama, and others
+- Azure OpenAI: Access to OpenAI models through Azure
 
 ## Common Features
 
