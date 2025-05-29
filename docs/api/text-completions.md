@@ -16,7 +16,7 @@ client = create_client(
 )
 
 # Generate text
-response = client.run_completions(
+response = client.generate_response(
     prompt="Write a short poem about artificial intelligence.",
     max_tokens=100
 )
@@ -29,7 +29,7 @@ For real-time text generation, use the streaming API:
 
 ```python
 # Stream the response token by token
-for token in client.run_completions_stream(
+for token in client.generate_response_stream(
     prompt="Write a short poem about artificial intelligence.",
     max_tokens=100
 ):
@@ -57,7 +57,7 @@ for token in client.run_completions_stream(
 ### Basic Text Generation
 
 ```python
-response = client.run_completions(
+response = client.generate_response(
     prompt="Write a short poem about artificial intelligence.",
     max_tokens=100,
     temperature=0.7
@@ -74,7 +74,7 @@ class Poem(BaseModel):
     content: str = Field(..., description="Content of the poem")
     theme: str = Field(..., description="Main theme of the poem")
 
-response = client.run_completions(
+response = client.generate_response(
     prompt="Write a short poem about artificial intelligence.",
     guided_json=Poem.model_json_schema(),
     max_tokens=200
@@ -84,7 +84,7 @@ response = client.run_completions(
 ### Error Handling
 
 ```python
-response, error = client.run_completions(
+response, error = client.generate_response(
     prompt="Write a short poem about artificial intelligence.",
     return_error=True
 )

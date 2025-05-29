@@ -24,7 +24,7 @@ client = create_client(
 
 ```python
 # Generate text from a prompt
-response = client.run_completions(
+response = client.generate_response(
     prompt="Write a short poem about artificial intelligence.",
     max_tokens=100
 )
@@ -35,7 +35,7 @@ print(response)
 
 ```python
 # Stream the response token by token
-for token in client.run_completions_stream(
+for token in client.generate_response_stream(
     prompt="Write a short poem about artificial intelligence.",
     max_tokens=100
 ):
@@ -53,7 +53,7 @@ messages = [
     {"role": "user", "content": "What are the key benefits of modular code?"}
 ]
 
-response = client.run_chat_completions(
+response = client.generate_chat_response(
     messages=messages,
     max_tokens=150
 )
@@ -68,14 +68,14 @@ messages = [
     {"role": "system", "content": "You are a helpful assistant."},
     {"role": "user", "content": "What is Python?"}
 ]
-response = client.run_chat_completions(messages=messages)
+response = client.generate_chat_response(messages=messages)
 
 # Add the response to the conversation
 messages.append({"role": "assistant", "content": response})
 
 # Follow-up question
 messages.append({"role": "user", "content": "How does it compare to JavaScript?"})
-response = client.run_chat_completions(messages=messages)
+response = client.generate_chat_response(messages=messages)
 ```
 
 ## Image Analysis
@@ -120,7 +120,7 @@ prompts = [
     "Provide a short definition of machine learning."
 ]
 
-responses = client.run_completions_batch(
+responses = client.generate_batch_response(
     prompts=prompts,
     max_tokens=100
 )
@@ -137,7 +137,7 @@ for prompt, response in zip(prompts, responses):
 
 ```python
 # Get error details with the response
-response, error = client.run_completions(
+response, error = client.generate_response(
     prompt="Hello",
     return_error=True
 )
@@ -152,7 +152,7 @@ else:
 ### Batch Error Handling
 
 ```python
-responses, errors = client.run_completions_batch(
+responses, errors = client.generate_batch_response(
     prompts=prompts,
     return_error=True
 )

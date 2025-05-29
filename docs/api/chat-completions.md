@@ -21,7 +21,7 @@ messages = [
     {"role": "user", "content": "What are the key benefits of modular code?"}
 ]
 
-response = client.run_chat_completions(
+response = client.generate_chat_response(
     messages=messages,
     max_tokens=150
 )
@@ -34,7 +34,7 @@ For real-time chat responses, use the streaming API:
 
 ```python
 # Stream the response token by token
-for token in client.run_chat_completions_stream(
+for token in client.generate_chat_response_stream(
     messages=messages,
     max_tokens=150
 ):
@@ -88,7 +88,7 @@ messages = [
     {"role": "user", "content": "What are the key benefits of modular code?"}
 ]
 
-response = client.run_chat_completions(
+response = client.generate_chat_response(
     messages=messages,
     max_tokens=150,
     temperature=0.7
@@ -103,14 +103,14 @@ messages = [
     {"role": "system", "content": "You are a helpful assistant."},
     {"role": "user", "content": "What is Python?"}
 ]
-response = client.run_chat_completions(messages=messages)
+response = client.generate_chat_response(messages=messages)
 
 # Add the response to the conversation
 messages.append({"role": "assistant", "content": response})
 
 # Follow-up question
 messages.append({"role": "user", "content": "How does it compare to JavaScript?"})
-response = client.run_chat_completions(messages=messages)
+response = client.generate_chat_response(messages=messages)
 ```
 
 ### Structured Output
@@ -129,7 +129,7 @@ messages = [
     {"role": "user", "content": "Review this code: def hello(): print('Hello')"}
 ]
 
-response = client.run_chat_completions(
+response = client.generate_chat_response(
     messages=messages,
     guided_json=CodeReview.model_json_schema(),
     max_tokens=300

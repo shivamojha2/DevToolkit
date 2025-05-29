@@ -26,7 +26,7 @@ client = create_client(
 )
 
 # Run chat completion
-response = client.run_chat_completions(
+response = client.generate_chat_response(
     messages=[
         {
             "role": "system",
@@ -55,7 +55,7 @@ The Gemini client supports the following parameters:
 
 ### Chat Completion Parameters
 
-When calling `run_chat_completions`, you can use the following parameters:
+When calling `generate_chat_response`, you can use the following parameters:
 
 - `messages`: List of message dictionaries with 'role' and 'content'
 - `max_tokens`: Maximum number of tokens to generate

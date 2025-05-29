@@ -18,9 +18,9 @@ Each utility module is designed to be imported independently:
 
 ```python
 # Example: Using LLM API utilities
-from devtoolkit.gen_ai.openai.invoke_model import run_completions
+from devtoolkit.gen_ai.openai.invoke_model import generate_response
 
-response = run_completions(
+response = generate_response(
     query="your prompt here", 
     endpoint="http://localhost:8000/v1",
     model_name="Llama-3.3-70B-Instruct",

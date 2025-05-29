@@ -48,7 +48,7 @@ def test_completions_api(client):
     print("\n1. Testing Completions API")
     print("--------------------------")
     prompt = "Write a short poem about artificial intelligence."
-    response = client.run_completions(prompt, max_tokens=100)
+    response = client.generate_response(prompt, max_tokens=100)
     print_response(response)
 
 
@@ -60,7 +60,7 @@ def test_chat_completions_api(client):
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "What are the key benefits of modular code?"},
     ]
-    response = client.run_chat_completions(messages, max_tokens=150)
+    response = client.generate_chat_response(messages, max_tokens=150)
     print_response(response)
 
 
@@ -73,7 +73,7 @@ def test_batch_completions_api(client):
         "What is the capital of France?",
         "Provide a short definition of machine learning.",
     ]
-    responses = client.run_completions_batch(prompts, max_tokens=100)
+    responses = client.generate_batch_response(prompts, max_tokens=100)
     for i, response in enumerate(responses):
         print(f"\nResponse {i+1}:")
         print_response(response)
@@ -87,7 +87,7 @@ def test_completions_streaming(client):
     print("Streaming response token by token:")
     print("----------------------------------")
 
-    response_stream = client.run_completions_stream(prompt, max_tokens=100)
+    response_stream = client.generate_response_stream(prompt, max_tokens=100)
     for token in response_stream:
         print(token, end="", flush=True)
     print()
@@ -104,7 +104,7 @@ def test_chat_completions_streaming(client):
     print("Streaming response token by token:")
     print("----------------------------------")
 
-    response_stream = client.run_chat_completions_stream(messages, max_tokens=100)
+    response_stream = client.generate_chat_response_stream(messages, max_tokens=100)
     for token in response_stream:
         print(token, end="", flush=True)
     print()
@@ -137,7 +137,7 @@ def test_guided_json_completions(client):
     Provide your feedback in a structured JSON format only: {CodeReview.model_json_schema()}
     """
 
-    response = client.run_completions(
+    response = client.generate_response(
         code_analysis_prompt, max_tokens=300, guided_json=CodeReview.model_json_schema()
     )
     print_response(response)
@@ -173,7 +173,7 @@ def test_guided_json_chat(client):
         },
     ]
 
-    response = client.run_chat_completions(
+    response = client.generate_chat_response(
         messages, max_tokens=300, guided_json=CodeReview.model_json_schema()
     )
     print_response(response)

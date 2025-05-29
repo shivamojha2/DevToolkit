@@ -17,7 +17,7 @@ from gen_ai.utils import encode_image
 logger = logging.getLogger(__name__)
 
 
-def run_completions(
+def generate_response(
     query: str,
     endpoint: str,
     model_name: str,
@@ -121,7 +121,7 @@ def run_completions(
     return result
 
 
-def run_chat_completions(
+def generate_chat_response(
     messages: List[Dict[str, Any]],
     endpoint: str,
     model_name: str,

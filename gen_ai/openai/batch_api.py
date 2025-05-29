@@ -5,13 +5,13 @@ Batch API related functions, using completions endpoint
 import logging
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from gen_ai.openai.invoke_model import run_completions
+from gen_ai.openai.invoke_model import generate_response
 
 # Set up logging
 logger = logging.getLogger(__name__)
 
 
-def run_completions_batch(
+def generate_batch_response(
     queries: List[str],
     endpoint: str,
     model_name: str,
@@ -45,7 +45,7 @@ def run_completions_batch(
 
     Example:
         >>> queries = ["Describe a sunset", "What is machine learning?"]
-        >>> results = run_completions_batch(queries, endpoint, model_name, api_key)
+        >>> results = generate_batch_response(queries, endpoint, model_name, api_key)
         >>> for query, result in zip(queries, results):
         >>>     print(f"Query: {query}")
         >>>     print(f"Result: {result}")
@@ -66,7 +66,7 @@ def run_completions_batch(
     def process_single_query(idx: int):
         query = queries[idx]
 
-        result, error = run_completions(
+        result, error = generate_response(
             query=query,
             endpoint=endpoint,
             model_name=model_name,

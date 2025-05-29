@@ -3,10 +3,10 @@ OpenAI client implementation
 """
 
 from gen_ai.api_interface import LLMProvider
-from gen_ai.openai.batch_api import run_completions_batch
-from gen_ai.openai.invoke_model import run_chat_completions, run_completions
-from gen_ai.openai.stream_model import (run_chat_completions_stream,
-                                        run_completions_stream)
+from gen_ai.openai.batch_api import generate_batch_response
+from gen_ai.openai.invoke_model import generate_chat_response, generate_response
+from gen_ai.openai.stream_model import (generate_chat_response_streaming,
+                                        generate_response_stream)
 from gen_ai.openai.vision_api import run_vision_request
 
 
@@ -20,28 +20,28 @@ class OpenAIClient(LLMProvider):
         self.endpoint = endpoint
         self.model_name = model_name
 
-    def run_completions(self, prompt, **kwargs):
-        return run_completions(
+    def generate_response(self, prompt, **kwargs):
+        return generate_response(
             prompt, self.endpoint, self.model_name, self.api_key, **kwargs
         )
 
-    def run_chat_completions(self, messages, **kwargs):
-        return run_chat_completions(
+    def generate_chat_response(self, messages, **kwargs):
+        return generate_chat_response(
             messages, self.endpoint, self.model_name, self.api_key, **kwargs
         )
 
-    def run_completions_batch(self, prompts, **kwargs):
-        return run_completions_batch(
+    def generate_batch_response(self, prompts, **kwargs):
+        return generate_batch_response(
             prompts, self.endpoint, self.model_name, self.api_key, **kwargs
         )
 
-    def run_completions_stream(self, prompt, **kwargs):
-        return run_completions_stream(
+    def generate_response_stream(self, prompt, **kwargs):
+        return generate_response_stream(
             prompt, self.endpoint, self.model_name, self.api_key, **kwargs
         )
 
-    def run_chat_completions_stream(self, messages, **kwargs):
-        return run_chat_completions_stream(
+    def generate_chat_response_streaming(self, messages, **kwargs):
+        return generate_chat_response_streaming(
             messages, self.endpoint, self.model_name, self.api_key, **kwargs
         )
 

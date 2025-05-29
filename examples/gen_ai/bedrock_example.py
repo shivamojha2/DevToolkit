@@ -49,7 +49,7 @@ def test_chat_completions_api(client):
     print("\n1. Testing Chat Completions API")
     print("------------------------------")
     messages = [{"role": "user", "content": "What is ambidexterity?"}]
-    response = client.run_chat_completions(messages, inferenceConfig={"maxTokens": 100})
+    response = client.generate_chat_response(messages, inferenceConfig={"maxTokens": 100})
     print_response(response)
 
 
@@ -58,7 +58,7 @@ def test_chat_completions_streaming(client):
     print("\n2. Testing Chat Completions Streaming API")
     print("----------------------------------------")
     messages = [{"role": "user", "content": "What is ambidexterity?"}]
-    response_stream = client.run_chat_completions_streaming(
+    response_stream = client.generate_chat_response_streaming(
         messages, inferenceConfig={"maxTokens": 100}
     )
     for token in response_stream:
@@ -72,7 +72,7 @@ def test_vision_api(client):
     print("----------------------")
     image_paths = ["examples/gen_ai/assets/test_image.jpg"]
     messages = [{"role": "user", "content": "What is in this image?"}]
-    response = client.run_chat_completions(messages, image_paths=image_paths)
+    response = client.generate_chat_response(messages, image_paths=image_paths)
     print_response(response)
 
 
@@ -82,7 +82,7 @@ def test_vision_api_streaming(client):
     print("--------------------------------")
     image_paths = ["examples/gen_ai/assets/test_image.jpg"]
     messages = [{"role": "user", "content": "What is in this image?"}]
-    response_stream = client.run_chat_completions_streaming(
+    response_stream = client.generate_chat_response_streaming(
         messages, image_paths=image_paths
     )
     for token in response_stream:

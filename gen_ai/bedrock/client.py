@@ -5,8 +5,8 @@ Bedrock client implementation
 import boto3
 
 from gen_ai.api_interface import LLMProvider
-from gen_ai.bedrock.invoke_model import run_chat_completions
-from gen_ai.bedrock.stream_model import run_chat_completions_streaming
+from gen_ai.bedrock.invoke_model import generate_chat_response
+from gen_ai.bedrock.stream_model import generate_chat_response
 
 
 class BedrockClient(LLMProvider):
@@ -48,12 +48,12 @@ class BedrockClient(LLMProvider):
             print(f"Error listing models: {str(e)}")
             return []
 
-    def run_chat_completions(self, messages, **kwargs):
-        return run_chat_completions(
+    def generate_chat_response(self, messages, **kwargs):
+        return generate_chat_response(
             self.runtime_client, messages, self.model_name, **kwargs
         )
 
-    def run_chat_completions_streaming(self, messages, **kwargs):
-        return run_chat_completions_streaming(
+    def generate_chat_response_streaming(self, messages, **kwargs):
+        return generate_chat_response_streaming(
             self.runtime_client, messages, self.model_name, **kwargs
         )

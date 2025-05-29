@@ -46,7 +46,7 @@ def main():
     ]
 
     # Run chat completion
-    response = client.run_chat_completions(
+    response = client.generate_chat_response(
         messages=messages,
         max_tokens=800,
         temperature=1.0,

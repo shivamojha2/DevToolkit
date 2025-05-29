@@ -11,5 +11,16 @@ class LLMProvider(ABC):
     """
 
     @abstractmethod
-    def run_chat_completions(self, messages, **kwargs):
+    def generate_chat_response(self, messages, **kwargs):
+        """
+        Generate a response in a chat/conversation context.
+
+        Args:
+            messages: List of message dictionaries with 'role' and 'content'
+                     representing the conversation history
+            **kwargs: Additional provider-specific parameters
+
+        Returns:
+            Response from the language model in the conversation context
+        """
         pass

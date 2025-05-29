@@ -1,6 +1,6 @@
 # Welcome to DevToolkit
 
-DevToolkit is a Python library that provides a simple and consistent interface for interacting with various Large Language Model (LLM) APIs. Currently, it supports OpenAI-compatible, Bedrock & Azure APIs and includes features for text completions, chat completions, vision requests, and batch processing.
+DevToolkit is a Python library that provides a simple and consistent interface for interacting with various Large Language Model (LLM) APIs. Currently, it supports OpenAI-compatible, Bedrock, Gemini & Azure APIs and includes features for text completions, chat completions, vision requests, and batch processing.
 
 ## Key Features
 

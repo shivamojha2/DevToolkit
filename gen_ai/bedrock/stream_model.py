@@ -14,14 +14,14 @@ from gen_ai.utils import format_messages_for_bedrock, validate_image_paths
 logger = logging.getLogger(__name__)
 
 
-def run_chat_completions_streaming(
+def generate_chat_response_streaming(
     client: boto3.client,
     messages: List[Dict[str, Any]],
     model_name: str,
     **kwargs,
 ) -> Generator[str, None, None]:
     """
-    Run a chat completion request using the Converse API
+    Generate a chat response using the Converse API
 
     Args:
         client: boto3.client

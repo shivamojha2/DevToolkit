@@ -25,13 +25,13 @@ client = create_client(
 
 ```python
 messages = [{"role": "user", "content": "Hello, how are you?"}]
-response = client.run_chat_completions(messages)
+response = client.generate_chat_response(messages)
 ```
 
 ### Streaming Chat Completions
 
 ```python
-for chunk in client.run_chat_completions_streaming(messages):
+for chunk in client.generate_chat_response_streaming(messages):
     print(chunk, end="", flush=True)
 ```
 
@@ -40,7 +40,7 @@ for chunk in client.run_chat_completions_streaming(messages):
 ```python
 messages = [{"role": "user", "content": "What's in this image?"}]
 image_paths = ["path/to/image.jpg"]
-response = client.run_chat_completions(messages, image_paths=image_paths)
+response = client.generate_chat_response(messages, image_paths=image_paths)
 ```
 
 ## Message Format

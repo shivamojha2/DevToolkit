@@ -26,7 +26,7 @@ client = create_client(
 )
 
 # Run chat completion
-response = client.run_chat_completions(
+response = client.generate_chat_response(
     messages=[
         {
             "role": "system",

@@ -17,7 +17,7 @@ class CodeReview(BaseModel):
     score: float = Field(description="Overall code quality score from 0 to 10")
 
 # Generate structured output
-response = client.run_chat_completions(
+response = client.generate_chat_response(
     messages=[
         {"role": "system", "content": "You are a code reviewer."},
         {"role": "user", "content": "Review this code: def add(a,b): return a+b"}
@@ -43,7 +43,7 @@ schema = {
     }
 }
 
-response = client.run_completions(
+response = client.generate_response(
     prompt="Analyze the sentiment of: 'I love this product!'",
     guided_json=schema
 )
@@ -90,7 +90,7 @@ functions = [
 ]
 
 # Use function calling
-response = client.run_chat_completions(
+response = client.generate_chat_response(
     messages=[{"role": "user", "content": "What's the weather in New York?"}],
     functions=functions
 )
@@ -119,7 +119,7 @@ class ConversationManager:
         self.token_count += estimated_tokens
 
     def get_response(self):
-        response = self.client.run_chat_completions(
+        response = self.client.generate_chat_response(
             messages=self.messages,
             max_tokens=150
         )
@@ -174,7 +174,7 @@ response = client.run_vision_request(
 
 ```python
 # Process multiple prompts concurrently
-responses = client.run_completions_batch(
+responses = client.generate_batch_response(
     prompts=[
         "Explain quantum computing",
         "Describe machine learning",
@@ -203,7 +203,7 @@ requests = [
     }
 ]
 
-responses = client.run_completions_batch(
+responses = client.generate_batch_response(
     prompts=[r["prompt"] for r in requests],
     max_tokens=[r["max_tokens"] for r in requests],
     temperature=[r["temperature"] for r in requests]
@@ -223,7 +223,7 @@ from tenacity import retry, stop_after_attempt, wait_exponential
 )
 def make_request_with_retry(client, prompt):
     try:
-        return client.run_completions(
+        return client.generate_response(
             prompt=prompt,
             max_tokens=100,
             return_error=True
@@ -241,17 +241,17 @@ response, error = make_request_with_retry(client, "Hello")
 ```python
 def process_with_recovery(client, prompt):
     try:
-        response = client.run_completions(prompt=prompt)
+        response = client.generate_response(prompt=prompt)
         return response
     except Exception as e:
         if "rate_limit" in str(e).lower():
             # Wait and retry with exponential backoff
             time.sleep(5)
-            return client.run_completions(prompt=prompt)
+            return client.generate_response(prompt=prompt)
         elif "context_length" in str(e).lower():
             # Truncate prompt and retry
             truncated_prompt = prompt[:len(prompt)//2]
-            return client.run_completions(prompt=truncated_prompt)
+            return client.generate_response(prompt=truncated_prompt)
         else:
             raise
 ```

@@ -15,7 +15,7 @@ from gen_ai.utils import encode_image, validate_image_paths
 logger = logging.getLogger(__name__)
 
 
-def run_completions_stream(
+def generate_response_stream(
     query: str,
     endpoint: str,
     model_name: str,
@@ -125,7 +125,7 @@ def run_completions_stream(
         raise ValueError(f"Failed to process streaming response: {e}")
 
 
-def run_chat_completions_stream(
+def generate_chat_response_streaming(
     messages: List[Dict[str, Any]],
     endpoint: str,
     model_name: str,

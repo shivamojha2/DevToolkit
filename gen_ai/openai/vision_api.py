@@ -4,8 +4,8 @@ Vision Language model API related functions
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from gen_ai.openai.invoke_model import run_chat_completions
-from gen_ai.openai.stream_model import run_chat_completions_stream
+from gen_ai.openai.invoke_model import generate_chat_response
+from gen_ai.openai.stream_model import generate_chat_response_streaming
 from gen_ai.utils import validate_image_paths
 
 
@@ -61,7 +61,7 @@ def run_vision_request(
 
     # If streaming is enabled, use the streaming function
     if stream:
-        return run_chat_completions_stream(
+        return generate_chat_response_streaming(
             messages=messages,
             endpoint=endpoint,
             model_name=model_name,
@@ -71,7 +71,7 @@ def run_vision_request(
             **kwargs
         )
     else:
-        return run_chat_completions(
+        return generate_chat_response(
             messages=messages,
             endpoint=endpoint,
             model_name=model_name,

@@ -44,7 +44,7 @@ class AzureOpenAIClient(LLMProvider):
             **kwargs,
         )
 
-    def run_chat_completions(
+    def generate_chat_response(
         self,
         messages: List[Dict[str, str]],
         max_tokens: Optional[int] = None,
@@ -55,7 +55,7 @@ class AzureOpenAIClient(LLMProvider):
         **kwargs,
     ) -> Any:
         """
-        Run chat completions using Azure OpenAI
+        Generate a chat response using Azure OpenAI
 
         Args:
             messages: List of message dictionaries with 'role' and 'content'

@@ -22,7 +22,7 @@ prompts = [
     "Provide a short definition of machine learning."
 ]
 
-responses = client.run_completions_batch(
+responses = client.generate_batch_response(
     prompts=prompts,
     max_tokens=100
 )
@@ -61,7 +61,7 @@ prompts = [
     "Write a haiku about winter."
 ]
 
-responses = client.run_completions_batch(
+responses = client.generate_batch_response(
     prompts=prompts,
     max_tokens=50,
     temperature=0.7
@@ -71,7 +71,7 @@ responses = client.run_completions_batch(
 ### Error Handling
 
 ```python
-responses, errors = client.run_completions_batch(
+responses, errors = client.generate_batch_response(
     prompts=prompts,
     return_error=True
 )
@@ -89,7 +89,7 @@ for i, (response, error) in enumerate(zip(responses, errors)):
 
 ```python
 # Process 10 prompts with max 3 concurrent requests
-responses = client.run_completions_batch(
+responses = client.generate_batch_response(
     prompts=prompts,
     concurrent=True,
     max_concurrent=3,

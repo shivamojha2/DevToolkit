@@ -17,7 +17,7 @@ from gen_ai.utils import format_messages_for_bedrock, validate_image_paths
 logger = logging.getLogger(__name__)
 
 
-def run_chat_completions(
+def generate_chat_response(
     client: boto3.client,
     messages: List[Dict[str, Any]],
     model_name: str,
