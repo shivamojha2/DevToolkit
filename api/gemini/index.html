@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://shivamojha2.github.io/DevToolkit/api/azure_openai/">
+        <link rel="canonical" href="https://shivamojha2.github.io/DevToolkit/api/gemini/">
       
       
-        <link rel="prev" href="../bedrock/">
+        <link rel="prev" href="../azure_openai/">
       
       
-        <link rel="next" href="../gemini/">
+        <link rel="next" href="../factory/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Azure OpenAI - DevToolkit Documentation</title>
+        <title>Google Gemini - DevToolkit Documentation</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#azure-openai-integration" class="md-skip">
+        <a href="#google-gemini-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Azure OpenAI
+              Google Gemini
             
           </span>
         </div>
@@ -482,6 +482,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure_openai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure OpenAI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -499,7 +522,7 @@
   
   
   <span class="md-ellipsis">
-    Azure OpenAI
+    Google Gemini
     
   </span>
   
@@ -512,7 +535,7 @@
   
   
   <span class="md-ellipsis">
-    Azure OpenAI
+    Google Gemini
     
   </span>
   
@@ -571,15 +594,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#available-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Models
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#error-handling" class="md-nav__link">
     <span class="md-ellipsis">
-      Example
+      Error Handling
     </span>
   </a>
   
@@ -589,29 +621,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../gemini/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Google Gemini
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -877,15 +886,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#available-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Models
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#error-handling" class="md-nav__link">
     <span class="md-ellipsis">
-      Example
+      Error Handling
     </span>
   </a>
   
@@ -907,33 +925,24 @@
 
 
 
-<h1 id="azure-openai-integration">Azure OpenAI Integration<a class="headerlink" href="#azure-openai-integration" title="Permanent link">&para;</a></h1>
-<p>This document describes how to use the Azure OpenAI integration in the DevToolkit.</p>
+<h1 id="google-gemini-integration">Google Gemini Integration<a class="headerlink" href="#google-gemini-integration" title="Permanent link">&para;</a></h1>
+<p>This document describes how to use the Google Gemini integration in the DevToolkit.</p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Create an Azure OpenAI resource in your Azure portal</li>
-<li>Deploy a model in your Azure OpenAI resource</li>
-<li>Get your API key and endpoint from the Azure portal</li>
+<li>Get your Google API key from Google Cloud Console</li>
 <li>Set up the following environment variables:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="nv">AZURE_OPENAI_ENDPOINT</span><span class="o">=</span>https://your-resource.openai.azure.com/
-<span class="nv">AZURE_OPENAI_API_KEY</span><span class="o">=</span>your-api-key
-<span class="nv">AZURE_OPENAI_MODEL_NAME</span><span class="o">=</span>gpt-4
-<span class="nv">AZURE_OPENAI_DEPLOYMENT</span><span class="o">=</span>your-deployment-name
-<span class="nv">AZURE_OPENAI_API_VERSION</span><span class="o">=</span><span class="m">2024</span>-02-15-preview<span class="w">  </span><span class="c1"># Optional, defaults to 2024-02-15-preview</span>
+<div class="highlight"><pre><span></span><code><span class="nv">GOOGLE_API_KEY</span><span class="o">=</span>your-api-key
 </code></pre></div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>You can use the Azure OpenAI client through the factory:</p>
+<p>You can use the Gemini client through the factory:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">gen_ai.factory</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_client</span>
 
-<span class="c1"># Create Azure OpenAI client</span>
+<span class="c1"># Create Gemini client</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">create_client</span><span class="p">(</span>
-    <span class="n">provider</span><span class="o">=</span><span class="s2">&quot;azure&quot;</span><span class="p">,</span>
+    <span class="n">provider</span><span class="o">=</span><span class="s2">&quot;gemini&quot;</span><span class="p">,</span>
     <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;your-api-key&quot;</span><span class="p">,</span>
-    <span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;https://your-resource.openai.azure.com/&quot;</span><span class="p">,</span>
-    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span>
-    <span class="n">deployment</span><span class="o">=</span><span class="s2">&quot;your-deployment-name&quot;</span><span class="p">,</span>
-    <span class="n">api_version</span><span class="o">=</span><span class="s2">&quot;2024-02-15-preview&quot;</span><span class="p">,</span>  <span class="c1"># Optional</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;gemini-pro&quot;</span><span class="p">,</span>  <span class="c1"># Optional, defaults to gemini-pro</span>
 <span class="p">)</span>
 
 <span class="c1"># Run chat completion</span>
@@ -951,34 +960,32 @@
     <span class="n">max_tokens</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
     <span class="n">temperature</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="n">top_p</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">frequency_penalty</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
-    <span class="n">presence_penalty</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># Get response</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
-<p>The Azure OpenAI client supports the following parameters:</p>
+<p>The Gemini client supports the following parameters:</p>
 <ul>
-<li><code>api_key</code> (required): Your Azure OpenAI API key</li>
-<li><code>endpoint</code> (required): Your Azure OpenAI endpoint URL</li>
-<li><code>model_name</code> (required): The name of the model to use</li>
-<li><code>deployment</code> (required): The name of your Azure OpenAI deployment</li>
-<li><code>api_version</code> (optional): The API version to use (defaults to "2024-02-15-preview")</li>
+<li><code>api_key</code> (required): Your Google API key</li>
+<li><code>model_name</code> (optional): The name of the model to use (defaults to "gemini-pro")</li>
 </ul>
 <h3 id="chat-completion-parameters">Chat Completion Parameters<a class="headerlink" href="#chat-completion-parameters" title="Permanent link">&para;</a></h3>
 <p>When calling <code>run_chat_completions</code>, you can use the following parameters:</p>
 <ul>
-<li><code>messages</code> (required): List of message dictionaries with 'role' and 'content'</li>
-<li><code>max_tokens</code> (optional): Maximum number of tokens to generate</li>
-<li><code>temperature</code> (optional): Sampling temperature (default: 1.0)</li>
-<li><code>top_p</code> (optional): Nucleus sampling parameter (default: 1.0)</li>
-<li><code>frequency_penalty</code> (optional): Frequency penalty (default: 0.0)</li>
-<li><code>presence_penalty</code> (optional): Presence penalty (default: 0.0)</li>
+<li><code>messages</code>: List of message dictionaries with 'role' and 'content'</li>
+<li><code>max_tokens</code>: Maximum number of tokens to generate</li>
+<li><code>temperature</code>: Sampling temperature (0.0 to 1.0)</li>
+<li><code>top_p</code>: Nucleus sampling parameter (0.0 to 1.0)</li>
 </ul>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>See the complete example in <code>examples/azure_openai_example.py</code>.</p>
+<h3 id="available-models">Available Models<a class="headerlink" href="#available-models" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>gemini-pro</code>: The main Gemini Pro model for text generation</li>
+<li><code>gemini-pro-vision</code>: The Gemini Pro Vision model for multimodal tasks (coming soon)</li>
+</ul>
+<h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
+<p>The client uses the standard DevToolkit error handling system, raising <code>APIError</code> with detailed information when something goes wrong. </p>
 
 
 
