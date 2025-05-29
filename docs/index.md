@@ -18,6 +18,7 @@ DevToolkit is a Python library that provides a simple and consistent interface f
 - [OpenAI Examples](examples/openai_examples.md)
 - [Bedrock Examples](examples/bedrock_examples.md)
 - [Azure Examples](examples/azure_openai.md)
+- [Gemini Examples](examples/gemini_examples.md)
 
 ## License
 

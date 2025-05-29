@@ -6,3 +6,4 @@ mkdocs==1.6.1
 mkdocstrings==0.29.1
 mkdocstrings-python==1.16.10
 mkdocs-material==9.6.12
+google-generativeai==0.8.5

@@ -5,6 +5,7 @@ Factory for creating clients for different providers
 from typing import Optional
 
 from gen_ai.bedrock.client import BedrockClient
+from gen_ai.gemini.client import GeminiClient
 from gen_ai.openai.azure_client import AzureOpenAIClient
 from gen_ai.openai.client import OpenAIClient
 
@@ -25,7 +26,7 @@ def create_client(
     Create a client for a given provider
 
     Args:
-        provider: The provider to use (e.g., "openai", "bedrock", "azure")
+        provider: The provider to use (e.g., "openai", "bedrock", "azure", "gemini")
         api_key: API key or AWS access key ID
         model_name: Name of the model to use
         endpoint: API endpoint URL (for OpenAI/Azure)
@@ -58,6 +59,12 @@ def create_client(
             model_name=model_name,
             deployment=deployment,
             api_version=api_version,
+            **kwargs,
+        )
+    elif provider == "gemini":
+        return GeminiClient(
+            api_key=api_key,
+            model_name=model_name,
             **kwargs,
         )
     else:

@@ -21,11 +21,13 @@ nav:
     - Batch Processing: api/batch-processing.md
     - AWS Bedrock: api/bedrock.md
     - Azure OpenAI: api/azure_openai.md
+    - Google Gemini: api/gemini.md
     - Client Factory: api/factory.md
   - Examples:
     - OpenAI Examples: examples/openai_examples.md
     - Bedrock Examples: examples/bedrock_examples.md
     - Azure OpenAI Examples: examples/azure_openai.md
+    - Gemini Examples: examples/gemini_examples.md
     - Advanced Features: examples/advanced-features.md
 
 markdown_extensions:
@@ -41,11 +43,9 @@ markdown_extensions:
 plugins:
   - search
   - mkdocstrings:
-      default_handler: python
       handlers:
         python:
-          selection:
+          options:
             docstring_style: google
-          rendering:
             show_source: true
-            show_root_heading: true 
+            show_root_heading: true

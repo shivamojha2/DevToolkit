@@ -5,6 +5,7 @@
 - OpenAI: Access to GPT models and other OpenAI services
 - AWS Bedrock: Access to various foundation models including Claude, Llama, and others
 - Azure OpenAI: Access to OpenAI models through Azure
+- Google Gemini: Access to Google's Gemini Pro models
 
 ## Common Features
 
@@ -30,3 +31,16 @@
 - Raw image bytes support
 - AWS credential management
 - Region-specific endpoints
+
+### Azure OpenAI
+
+- Azure-specific deployment support
+- Custom API versions
+- Azure credential management
+
+### Google Gemini
+
+- Simple API key authentication
+- Support for Gemini Pro models
+- Automatic message format conversion
+- Temperature and top_p controls
